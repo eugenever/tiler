@@ -102,16 +102,15 @@ ulimit -n 131136
 в узконаправленных оптимизациях. Таким образом, можно привлекать в проект разработчиков на `Python`.
 
 - прокси-сервер, балансировщик запросов, модуль управления состоянием тайлов, модуль мультипроцессинга (реализован на `Rust`):
-  [proxy balancer](https://gitlab.isone.com/aspect/aspect-gis/-/tree/develop/Tiler-Rust/server/rust/proxy-balancer?ref_type=heads)
+  [proxy balancer](https://github.com/eugenever/tiler/tree/main/server/rust/proxy-balancer)
 
 - минималистичный http-сервер для web-приложений на `Python` (реализован на `Rust`, фреймворк `Actix`). Использует библиотеку
   `PyO3` для взаимодествия с `API Python`:
-  [robyn rust worker](https://gitlab.isone.com/aspect/aspect-gis/-/tree/develop/Tiler-Rust/server/rust/robyn-worker?ref_type=heads),
-  [robyn python](https://gitlab.isone.com/aspect/aspect-gis/-/tree/develop/Tiler-Rust/server/robyn?ref_type=heads)
+  [robyn rust worker](https://github.com/eugenever/tiler/tree/main/server/rust/robyn-worker)
 
 - http-сервер [Granian](https://github.com/emmett-framework/granian) с полноценной поддержкой `ASGI` и, соответственно, `FastAPI` (на основе `hyper`)
 
-- целевое приложение на `Python`, которое загружается в воркеры http-сервера - [app_granian](https://gitlab.isone.com/aspect/aspect-gis/-/blob/develop/Tiler-Rust/app_granian.py?ref_type=heads) или [app_robyn](https://gitlab.isone.com/aspect/aspect-gis/-/blob/develop/Tiler-Rust/app_robyn.py?ref_type=heads)
+- целевое приложение на `Python`, которое загружается в воркеры http-сервера - [app_granian](https://github.com/eugenever/tiler/blob/main/app_granian.py) или [app_robyn](https://github.com/eugenever/tiler/blob/main/app_robyn.py)
 
 Текущая реализация обеспечивает одинаковый высокий уровень производительности на `Unix` и `Windows` системах, предоставляет
 больше настроек и даёт больше контроля над процессами приложения (воркерами процессов `Python`).
@@ -139,7 +138,7 @@ ulimit -n 131136
 ```
 
 Параметр `datasource_id` соответствует полю `id` из датасорса. Датасорсы при первоначальной инициализации базы данных
-располагаются в директориях [datasources/raster](https://gitlab.isone.com/aspect/aspect-gis/-/tree/develop/Tiler-Rust/datasources/raster?ref_type=heads) и [datasources/vector](https://gitlab.isone.com/aspect/aspect-gis/-/tree/develop/Tiler-Rust/datasources/vector?ref_type=heads).
+располагаются в директориях [datasources/raster](https://github.com/eugenever/tiler/tree/main/datasources/raster) и [datasources/vector](https://github.com/eugenever/tiler/tree/main/datasources/vector).
 Предполагается, что исходный растр размещается в папке `{Tiler_App}/data`, например:
 
 - C:\TileServer\data\Telekom_Srbija_2G_bounded_in_dBm_2020Q3.TIF
