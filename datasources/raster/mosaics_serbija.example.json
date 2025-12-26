@@ -1,0 +1,27 @@
+{
+  "id": "db16adb6-16a8-44af-9ac7-8d954e3cf5ac",
+  "type": "raster",
+  "mosaics": true,
+  "dataStore": {
+    "type": "raster",
+    "store": "internal",
+    "dataset": "Serbija",
+    "folder": "Serbija"
+  },
+  "pyramidSettings": {
+    "resampling": "nearest",
+    "save_tile_detail_db": true,
+    "count_processes": 5,
+    "remove_processing_raster_files": false,
+    "minzoom": 6,
+    "maxzoom": 12
+  },
+  "attribution": "Empty",
+  "description": "Example Serbija Mosaics Raster DataSource",
+  "version": "0.0.1",
+  "minzoom": 0,
+  "maxzoom": 19,
+  "mbtiles": true,
+  "center": [20.45676, 44.798176, 10],
+  "encoding": "f32"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "e000dfde-5c30-4783-b8f5-d3ae3138ad39",
+  "type": "vector",
+  "dataStore": {
+    "type": "vector",
+    "store": "tiles",
+    "tiles": ["https://api.maptiler.com/tiles/v3/{z}/{x}/{y}.pbf?key={k}"],
+    "keys": [
+      "t2mP0OQnprAXkW20R6Wd",
+      "fU3vlMsMn4Jb6dnEIFsx",
+      "qnePkfbGpMsLCi3KFBs3",
+      "Modv7lN1eXX1gmlqW0wY"
+    ]
+  },
+  "attribution": "MapTiler",
+  "description": "Example MapTiler Vector DataSource",
+  "version": "0.0.1",
+  "minzoom": 0,
+  "maxzoom": 15,
+  "mbtiles": true,
+  "bounds": {
+    "lng_w": 19.045474,
+    "lat_s": 41.876317,
+    "lng_e": 180,
+    "lat_n": 77.725596
+  },
+  "center": [37.617627, 55.755829, 11]
+}

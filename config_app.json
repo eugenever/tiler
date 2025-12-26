@@ -1,0 +1,34 @@
+{
+  "server": {
+    "type": "granian",
+    "timeout_worker_response": 30,
+    "timeout_pull_job": 60,
+    "host": "0.0.0.0",
+    "port": 8000,
+    "log_level": "INFO",
+    "thread_workers": 1,
+    "processes_workers": 3,
+    "interface": "asgi",
+    "backlog": 8196,
+    "backpressure": 200000,
+    "worker": {
+      "log_level": "ERROR",
+      "ports": {
+        "from": 9000,
+        "to": 9999
+      },
+      "reload_time": "02:30:00",
+      "reload_periodicity_days": 1,
+      "reload_repeat_minutes": 20,
+      "reload_repeat_attempts": 5,
+      "max_concurrent_tile_requests": 5
+    },
+    "terminate_childs_with_python": true
+  },
+  "tiler": {
+    "encoding_to_rgba": {
+      "x_block_size": 1000,
+      "y_block_size": 1000
+    }
+  }
+}

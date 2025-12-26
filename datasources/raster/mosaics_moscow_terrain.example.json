@@ -1,0 +1,29 @@
+{
+  "id": "bff42e10-562e-4764-9313-a4f4b58e50ca",
+  "type": "raster",
+  "mosaics": true,
+  "dataStore": {
+    "type": "raster",
+    "store": "internal",
+    "dataset": "Moscow_terrain",
+    "folder": "Moscow_terrain",
+    "host": "10.0.3.222",
+    "port": 8000
+  },
+  "pyramidSettings": {
+    "resampling": "nearest",
+    "save_tile_detail_db": true,
+    "count_processes": 10,
+    "remove_processing_raster_files": false,
+    "minzoom": 8,
+    "maxzoom": 14
+  },
+  "attribution": "Empty",
+  "description": "Example Moscow_terrain Mosaics Raster DataSource",
+  "version": "0.0.1",
+  "minzoom": 0,
+  "maxzoom": 19,
+  "mbtiles": true,
+  "center": [37.61556, 55.75222, 10],
+  "encoding": "f32"
+}

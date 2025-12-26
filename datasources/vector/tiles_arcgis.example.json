@@ -1,0 +1,23 @@
+{
+  "id": "b630e89c-d946-4e89-9fb7-9ce590ea6faf",
+  "type": "vector",
+  "dataStore": {
+    "type": "vector",
+    "store": "tiles",
+    "tiles": [
+      "https://basemaps.arcgis.com/arcgis/rest/services/World_Basemap_v2/VectorTileServer/tile/{z}/{y}/{x}.pbf"
+    ]
+  },
+  "attribution": "ARCGIS",
+  "description": "Example ARCGIS Vector DataSource",
+  "version": "0.0.1",
+  "minzoom": 1,
+  "maxzoom": 19,
+  "center": [37.617627, 55.755829, 11],
+  "bounds": {
+    "lng_w": 26.72,
+    "lat_s": 48.91,
+    "lng_e": 48.05,
+    "lat_n": 60.68
+  }
+}

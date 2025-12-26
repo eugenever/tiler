@@ -1,0 +1,29 @@
+{
+  "id": "1b728239-7555-499f-b09b-fa2094f3749d",
+  "type": "raster",
+  "mosaics": true,
+  "dataStore": {
+    "type": "raster",
+    "store": "internal",
+    "dataset": "coverage_mosaics",
+    "folder": "coverage_mosaics",
+    "host": "10.0.3.222",
+    "port": 8000
+  },
+  "pyramidSettings": {
+    "resampling": "nearest",
+    "save_tile_detail_db": true,
+    "count_processes": 6,
+    "remove_processing_raster_files": false,
+    "minzoom": 6,
+    "maxzoom": 12
+  },
+  "attribution": "Empty",
+  "description": "Example coverage_mosaics Mosaics Raster DataSource",
+  "version": "0.0.1",
+  "minzoom": 0,
+  "maxzoom": 19,
+  "mbtiles": true,
+  "center": [2.45676, 48.798176, 10],
+  "encoding": "f32"
+}

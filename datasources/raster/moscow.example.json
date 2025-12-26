@@ -1,0 +1,27 @@
+{
+  "id": "4a008606-5a13-454d-8454-2c06e0ba1092",
+  "type": "raster",
+  "mosaics": false,
+  "dataStore": {
+    "type": "raster",
+    "store": "internal",
+    "dataset": "Moscow_warp",
+    "file": "Moscow_warp.tif"
+  },
+  "pyramidSettings": {
+    "resampling": "nearest",
+    "save_tile_detail_db": true,
+    "count_processes": 4,
+    "remove_processing_raster_files": false,
+    "minzoom": 9,
+    "maxzoom": 13
+  },
+  "attribution": "Empty",
+  "description": "Example Moscow Raster DataSource",
+  "version": "0.0.1",
+  "minzoom": 0,
+  "maxzoom": 19,
+  "mbtiles": true,
+  "center": [37.617627, 55.755829, 11],
+  "encoding": "f32"
+}

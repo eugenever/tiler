@@ -1,0 +1,29 @@
+{
+  "id": "dafc76d4-8bc7-455a-a2d4-4e2d1cb13b35",
+  "type": "raster",
+  "mosaics": false,
+  "dataStore": {
+    "type": "raster",
+    "store": "internal",
+    "dataset": "Telekom_Srbija_2G_bounded_in_dBm_2020Q3",
+    "file": "Telekom_Srbija_2G_bounded_in_dBm_2020Q3.TIF",
+    "host": "10.0.3.222",
+    "port": 8000
+  },
+  "pyramidSettings": {
+    "resampling": "nearest",
+    "save_tile_detail_db": true,
+    "count_processes": 3,
+    "remove_processing_raster_files": false,
+    "minzoom": 7,
+    "maxzoom": 12
+  },
+  "attribution": "Empty",
+  "description": "Example Telekom_Srbija_2G_bounded_in_dBm_2020Q3 Raster DataSource",
+  "version": "0.0.1",
+  "minzoom": 0,
+  "maxzoom": 19,
+  "mbtiles": false,
+  "center": [20.45676, 44.798176, 10],
+  "encoding": "f32"
+}

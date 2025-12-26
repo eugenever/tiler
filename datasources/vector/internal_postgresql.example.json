@@ -1,0 +1,342 @@
+{
+  "id": "aa274ed8-f592-4a74-bfed-ef56cbdbcd10",
+  "type": "vector",
+  "dataStore": {
+    "type": "vector",
+    "store": "internal"
+  },
+  "pyramidSettings": {
+    "count_processes": 4,
+    "minzoom": 7,
+    "maxzoom": 11
+  },
+  "attribution": "Empty",
+  "description": "Example PostgreSQL/PostGIS Vector DataSource",
+  "version": "0.0.1",
+  "buffer": 64,
+  "extent": 4096,
+  "minzoom": 0,
+  "maxzoom": 19,
+  "mbtiles": true,
+  "bounds": {
+    "lng_w": 26.72,
+    "lat_s": 48.91,
+    "lng_e": 48.05,
+    "lat_n": 60.68
+  },
+  "center": [37.617627, 55.755829, 11],
+  "layers": [
+    {
+      "id": "building",
+      "type": "polygon",
+      "storeLayer": "cfo_polygon",
+      "geomField": "way",
+      "description": "Layer of building",
+      "minzoom": 13,
+      "maxzoom": 19,
+      "simplify": false,
+      "filter": [
+        "all",
+        ["==", ["geometry-type"], "Polygon"],
+        [
+          "any",
+          ["all", ["!=", ["get", "building"], "no"], ["has", "building"]],
+          ["in", ["get", "aeroway"], "terminal"]
+        ]
+      ],
+      "fields": [
+        {
+          "name": "id",
+          "name_in_db": "id",
+          "encode": true,
+          "description": "ID of building geometry in database"
+        },
+        {
+          "name": "osm_id",
+          "name_in_db": "osm_id",
+          "encode": true,
+          "description": "osm_id of building"
+        },
+        {
+          "name": "building",
+          "name_in_db": "building",
+          "encode": false,
+          "description": "Name of building"
+        },
+        {
+          "name": "aeroway",
+          "name_in_db": "aeroway",
+          "description": "aeroway"
+        }
+      ]
+    },
+    {
+      "id": "water",
+      "type": "polygon",
+      "storeLayer": "water",
+      "geomField": "way",
+      "description": "Layer of water",
+      "minzoom": 9,
+      "maxzoom": 19,
+      "simplify": true,
+      "fields": [
+        {
+          "name": "id",
+          "encode": true,
+          "description": "ID of water geometry in database"
+        },
+        {
+          "name": "osm_id",
+          "name_in_db": "osm_id",
+          "encode": true,
+          "description": "osm_id of water"
+        },
+        {
+          "name": "natural",
+          "description": "description natural",
+          "encode": true
+        },
+        {
+          "name": "waterway",
+          "description": "description waterway"
+        },
+        {
+          "name": "landuse",
+          "description": "description landuse"
+        }
+      ]
+    },
+    {
+      "id": "park",
+      "type": "polygon",
+      "storeLayer": "cfo_polygon",
+      "geomField": "way",
+      "description": "Layer of park",
+      "minzoom": 11,
+      "maxzoom": 19,
+      "simplify": true,
+      "filter": [
+        "all",
+        ["==", "$type", "Polygon"],
+        [
+          "any",
+          [
+            "in",
+            "leisure",
+            "dog_park",
+            "golf_course",
+            "pitch",
+            "park",
+            "playground",
+            "garden",
+            "common"
+          ],
+          [
+            "in",
+            ["get", "landuse"],
+            "allotments",
+            "cemetery",
+            "recreation_ground",
+            "village_green"
+          ]
+        ]
+      ],
+      "fields": [
+        {
+          "name": "id",
+          "name_in_db": "id",
+          "encode": true,
+          "description": "ID of park geometry in database"
+        },
+        {
+          "name": "osm_id",
+          "name_in_db": "osm_id",
+          "encode": true,
+          "description": "osm_id of park"
+        },
+        {
+          "name": "leisure",
+          "name_in_db": "leisure",
+          "description": "description leisure"
+        },
+        {
+          "name": "natural",
+          "description": "description natural"
+        },
+        {
+          "name": "landuse",
+          "description": "description landuse"
+        }
+      ]
+    },
+    {
+      "id": "forest",
+      "type": "polygon",
+      "storeLayer": "cfo_polygon",
+      "geomField": "way",
+      "description": "Layer of forest",
+      "minzoom": 10,
+      "maxzoom": 19,
+      "simplify": true,
+      "filter": [
+        "any",
+        ["in", "natural", "wood"],
+        ["in", ["get", "landuse"], "forest", "wood"]
+      ],
+      "fields": [
+        {
+          "name": "id",
+          "name_in_db": "id",
+          "encode": true,
+          "description": "ID of forest geometry in database"
+        },
+        {
+          "name": "osm_id",
+          "name_in_db": "osm_id",
+          "encode": true,
+          "description": "osm_id of forest"
+        },
+        {
+          "name": "natural",
+          "description": "description natural"
+        },
+        {
+          "name": "landuse",
+          "description": "description landuse"
+        }
+      ]
+    },
+    {
+      "id": "motorway",
+      "type": "line",
+      "storeLayer": "cfo_line",
+      "geomField": "way",
+      "description": "Layer of motorway",
+      "minzoom": 7,
+      "maxzoom": 19,
+      "simplify": true,
+      "filter": [
+        "all",
+        [
+          "in",
+          "highway",
+          "motorway",
+          "primary",
+          "primary_link",
+          "trunk",
+          "trunk_link"
+        ]
+      ],
+      "fields": [
+        {
+          "name": "id",
+          "name_in_db": "id",
+          "encode": true,
+          "description": "ID of motorway geometry in database"
+        },
+        {
+          "name": "osm_id",
+          "name_in_db": "osm_id",
+          "encode": true,
+          "description": "osm_id of forest"
+        },
+        {
+          "name": "highway",
+          "name_in_db": "highway",
+          "description": "description highway"
+        }
+      ]
+    },
+    {
+      "id": "state",
+      "type": "point",
+      "storeLayer": "cfo_point",
+      "geomField": "way",
+      "description": "Layer of state",
+      "minzoom": 4,
+      "maxzoom": 8,
+      "simplify": false,
+      "filter": ["all", ["==", "place", "state"]],
+      "fields": [
+        {
+          "name": "id",
+          "name_in_db": "id",
+          "encode": true,
+          "description": "ID of state geometry in database"
+        },
+        {
+          "name": "osm_id",
+          "name_in_db": "osm_id",
+          "encode": true,
+          "description": "osm_id of state"
+        },
+        {
+          "name": "place",
+          "name_in_db": "place",
+          "description": "description place"
+        }
+      ]
+    },
+    {
+      "id": "city",
+      "type": "point",
+      "storeLayer": "cfo_point",
+      "geomField": "way",
+      "description": "Layer of city",
+      "minzoom": 7,
+      "maxzoom": 11,
+      "simplify": false,
+      "filter": ["all", ["==", "place", "city"]],
+      "fields": [
+        {
+          "name": "id",
+          "name_in_db": "id",
+          "encode": true,
+          "description": "ID of city geometry in database"
+        },
+        {
+          "name": "osm_id",
+          "name_in_db": "osm_id",
+          "encode": true,
+          "description": "osm_id of city"
+        },
+        {
+          "name": "place",
+          "name_in_db": "place",
+          "description": "description place"
+        }
+      ]
+    },
+    {
+      "id": "town",
+      "type": "point",
+      "storeLayer": "cfo_point",
+      "geomField": "way",
+      "description": "Layer of town",
+      "minzoom": 8,
+      "maxzoom": 13,
+      "simplify": false,
+      "filter": ["all", ["==", "place", "town"]],
+      "fields": [
+        {
+          "name": "id",
+          "name_in_db": "id",
+          "encode": true,
+          "description": "ID of town geometry in database"
+        },
+        {
+          "name": "osm_id",
+          "name_in_db": "osm_id",
+          "encode": true,
+          "description": "osm_id of town"
+        },
+        {
+          "name": "place",
+          "name_in_db": "place",
+          "encode": false,
+          "description": "description place"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "eee20116-1024-41e9-9c78-e718b47668b7",
+  "type": "raster",
+  "mosaics": false,
+  "dataStore": {
+    "type": "raster",
+    "store": "internal",
+    "dataset": "simple",
+    "file": "simple.tiff"
+  },
+  "pyramidSettings": {
+    "resampling": "nearest",
+    "save_tile_detail_db": true,
+    "count_processes": 3,
+    "remove_processing_raster_files": false,
+    "encode_to_rgba": false,
+    "minzoom": 9,
+    "maxzoom": 12
+  },
+  "attribution": "Empty",
+  "description": "Example simple Raster DataSource",
+  "version": "0.0.1",
+  "minzoom": 0,
+  "maxzoom": 19,
+  "mbtiles": false,
+  "center": [20.45676, 44.798176, 10],
+  "encoding": "f32"
+}

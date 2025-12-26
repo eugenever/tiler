@@ -1,0 +1,28 @@
+{
+  "id": "www99152R-da89-4edf-8d9a-f4cd9cb7e442",
+  "type": "raster",
+  "mosaics": false,
+  "dataStore": {
+    "type": "raster",
+    "store": "internal",
+    "file": "A1_Srbija_4G_bounded_in_dBm_2021Q1.TIF",
+    "host": "10.0.3.222",
+    "port": 8000
+  },
+  "pyramidSettings": {
+    "resampling": "nearest",
+    "save_tile_detail_db": true,
+    "count_processes": 4,
+    "remove_processing_raster_files": false,
+    "minzoom": 6,
+    "maxzoom": 12
+  },
+  "attribution": "Empty",
+  "description": "Example A1_Srbija_4G_bounded_in_dBm_2021Q1 Raster DataSource",
+  "version": "0.0.1",
+  "minzoom": 0,
+  "maxzoom": 19,
+  "mbtiles": true,
+  "center": [20.45676, 44.798176, 10],
+  "encoding": "f32"
+}

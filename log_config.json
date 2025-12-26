@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "disable_existing_loggers": false,
+  "formatters": {
+    "generic": {
+      "()": "logging.Formatter",
+      "fmt": "%(asctime)s.%(msecs)03d [%(levelname)s] Worker: %(message)s",
+      "datefmt": "%d-%m-%Y %H:%M:%S"
+    },
+    "access": {
+      "()": "logging.Formatter",
+      "fmt": "%(asctime)s.%(msecs)03d Worker: %(message)s",
+      "datefmt": "%d-%m-%Y %H:%M:%S"
+    }
+  },
+  "handlers": {
+    "console": {
+      "formatter": "generic",
+      "class": "logging.StreamHandler",
+      "stream": "ext://sys.stdout"
+    },
+    "access": {
+      "formatter": "access",
+      "class": "logging.StreamHandler",
+      "stream": "ext://sys.stdout"
+    }
+  },
+  "loggers": {
+    "_granian": {
+      "handlers": ["console"],
+      "level": "INFO",
+      "propagate": false
+    },
+    "granian.access": {
+      "handlers": ["access"],
+      "level": "INFO",
+      "propagate": false
+    }
+  }
+}
